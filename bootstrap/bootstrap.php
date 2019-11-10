@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace RouterApp;
-
 require_once dirname(__DIR__).'/vendor/autoload.php';
 
 use RouterApp\ContainerFactory;
