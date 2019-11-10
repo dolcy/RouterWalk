@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace RouterApp\Controller;
 
-use Exception;
 use Illuminate\Database\Capsule\Manager as DB;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\Response\TextResponse;
 
-class PatientsController
+class PatientsController extends AbstractController
 {
     /**
      * Index action resource.

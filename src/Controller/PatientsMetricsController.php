@@ -10,7 +10,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\Response\TextResponse;
 
-class PatientsMetricsController
+class PatientsMetricsController extends AbstractController
 {
     /**
      * Index action resource.
