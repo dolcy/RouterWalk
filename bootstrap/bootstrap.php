@@ -6,6 +6,7 @@ require_once dirname(__DIR__).'/vendor/autoload.php';
 
 use RouterApp\ContainerFactory;
 use Zend\HttpHandlerRunner\Emitter\SapiEmitter;
+use Zend\Diactoros\ServerRequestFactory;
 use League\Route\Router;
 use Middlewares\Whoops;
 use Monolog\Logger;
@@ -34,25 +35,22 @@ try {
 }
 
 // Set request globals
-$request = \Zend\Diactoros\ServerRequestFactory::fromGlobals(
+$request = ServerRequestFactory::fromGlobals(
     $_SERVER,
     $_GET,
     $_POST
 );
 
-// Instantiate router
-$router = new Router;
-
-// Register error handler middleware
-$router->middleware(new Whoops($whoops));
-
 // Instantiate eloquent capsule
 $database = $container->get('database');
 
-// Invoke all routes via instance
-include dirname(__DIR__).'/src/Route/Routes.php';
+// Instantiate eloquent capsule
+$router = $container->get('router');
 
-// Dispatch router request
+// // Register error handler middleware
+$router->middleware(new Whoops($whoops));
+
+// // Dispatch router request
 $response = $router->dispatch($request);
 
 // Emit response to browser

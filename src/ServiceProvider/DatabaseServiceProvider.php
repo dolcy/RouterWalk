@@ -16,10 +16,15 @@ class DatabaseServiceProvider extends AbstractServiceProvider
      */
     protected $provides = ['database'];
 
+    /**
+     * Register eloquent capsule service.
+     *
+     * @return mixed
+     */
     public function register()
     {
         $this->getContainer()->add('database', function () {
-            // Set eloquent manager
+            // Set eloquent capsule manager
             $capsule = new Manager();
             $capsule->addConnection([
               'driver' => getenv('DB_CONNECTION'),

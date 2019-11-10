@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace RouterApp\ServiceProvider;
 
-use Rareloop\Router\Router;
 use League\Container\ServiceProvider\AbstractServiceProvider;
+use League\Route\Router;
 
 class RouteServiceProvider extends AbstractServiceProvider
 {
@@ -16,11 +16,20 @@ class RouteServiceProvider extends AbstractServiceProvider
      */
     protected $provides = ['router'];
 
+    /**
+     * Register router service.
+     *
+     * @return mixed
+     */
     public function register()
     {
         $this->getContainer()->add('router', function () {
-            // Set router
+
+            // Instantiate router
             $router = new Router();
+
+            // Include routes
+            include \dirname(__DIR__).'/Route/Routes.php';
 
             return $router;
         });
