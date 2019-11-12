@@ -10,3 +10,9 @@ Then finally...
 ``` bash
 $ composer install && composer start
 ```
+
+Testing
+
+``` bash
+$ phpunit
+```
