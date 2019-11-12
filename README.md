@@ -1,12 +1,9 @@
-# routerapp
-RouterApp demo
+## Routerapp
+RouterApp demo showcasing RESTful routing
 
-# Setup
-Add db credentials in .env
+## Install and Startup
+First, install routerapp.sql located in the Data folder via your db client  
 
-Create db with routerapp.sql located in src directory
-
-Composer install
-
-Use Postman/Insomnia for testing api
-
+``` bash
+$ composer install && composer start
+```
