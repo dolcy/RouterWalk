@@ -12,6 +12,7 @@ use Middlewares\Whoops;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\FirePHPHandler;
+use RouterApp\Route\Route;
 
 // Load evironment variables
 $dotenv = \Dotenv\Dotenv::create(__DIR__.'/../');
@@ -44,13 +45,13 @@ $request = ServerRequestFactory::fromGlobals(
 // Instantiate eloquent capsule
 $database = $container->get('database');
 
-// Instantiate eloquent capsule
-$router = $container->get('router');
+// Instantiate router
+$router = Route::resource();
 
-// // Register error handler middleware
+// Register error handler middleware
 $router->middleware(new Whoops($whoops));
 
-// // Dispatch router request
+// Dispatch router request
 $response = $router->dispatch($request);
 
 // Emit response to browser

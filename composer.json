@@ -35,5 +35,8 @@
       "@phpunit"
     ],
     "phpunit": "php vendor/bin/phpunit"
+  },
+  "config": {
+    "process-timeout": 0
   }
 }
