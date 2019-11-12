@@ -37,6 +37,10 @@ class PatientsMetricsController extends AbstractController
                 'metrics.risk_level'
             )
             ->first();
+        // check if patient exists before deleting
+        if (null === $patientsMetrics) {
+            return new TextResponse('Patient id:'.$args['id'].' does not exist.', 404);
+        }
 
         // Process argument array
         $args = [
@@ -84,6 +88,11 @@ class PatientsMetricsController extends AbstractController
             )
             ->first();
 
+        // check if patient exists before deleting
+        if (null === $patientsMetrics) {
+            return new TextResponse('Patient id:'.$args['id'].' does not exist.', 404);
+        }
+
         // Process argument array
         $args = [
               'id' => $patientsMetrics->id,
@@ -126,6 +135,11 @@ class PatientsMetricsController extends AbstractController
                 ]
             );
 
+        // check if patient exists before creating
+        if (null === $patientsMetrics) {
+            return new TextResponse('Sorry, an error occurred creating patient.', 400);
+        }
+
         $response = new Response();
 
         try {
@@ -162,6 +176,12 @@ class PatientsMetricsController extends AbstractController
         $response = new Response();
 
         try {
+            $findPatient = DB::table('patients')->where('patients.id', $args['id'])->first();
+
+            // check if patient exists before updating
+            if (null === $findPatient) {
+                return new TextResponse('Patient id:'.$args['id'].' does not exist!', 404);
+            }
             $response->getBody()->write(json_encode($patientsMetrics, JSON_PRETTY_PRINT));
         } catch (Exception $e) {
             throw $e;
