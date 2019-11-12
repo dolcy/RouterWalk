@@ -19,7 +19,7 @@ class PatientsController extends AbstractController
      *
      * @return Response
      */
-    public function index(Request $request): Response
+    public function patientIndex(Request $request): Response
     {
         // Perform query
         $patients = DB::table('patients')
@@ -49,7 +49,7 @@ class PatientsController extends AbstractController
      *
      * @return Response
      */
-    public function get(Request $request, array $args): Response
+    public function patientFindById(Request $request, array $args): Response
     {
         // Perform query
         $patients = DB::table('patients')
@@ -83,7 +83,7 @@ class PatientsController extends AbstractController
      *
      * @return Response
      */
-    public function create(Request $request): Response
+    public function patientCreate(Request $request): Response
     {
         // Perform update by id
         $patients = DB::table('patients')
@@ -118,7 +118,7 @@ class PatientsController extends AbstractController
      *
      * @return Response
      */
-    public function update(Request $request, array $args): Response
+    public function patientUpdateById(Request $request, array $args): Response
     {
         // Perform update by id
         $patients = DB::table('patients')
@@ -156,7 +156,7 @@ class PatientsController extends AbstractController
      *
      * @return TextResponse
      */
-    public function delete(Request $request, array $args): TextResponse
+    public function patientDeleteById(Request $request, array $args): TextResponse
     {
         try {
             $patient = DB::table('patients')->where('patients.id', $args['id'])->first();

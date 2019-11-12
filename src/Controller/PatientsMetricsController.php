@@ -20,7 +20,7 @@ class PatientsMetricsController extends AbstractController
      *
      * @return Response
      */
-    public function index(Request $request, array $args): Response
+    public function patientMetricIndex(Request $request, array $args): Response
     {
         // Perform query
         $patientsMetrics = DB::table('patients')
@@ -66,7 +66,7 @@ class PatientsMetricsController extends AbstractController
      *
      * @return Response
      */
-    public function get(Request $request, array $args): Response
+    public function patientMetricFindById(Request $request, array $args): Response
     {
         // Perform query
         $patientsMetrics = DB::table('patients')
@@ -112,7 +112,7 @@ class PatientsMetricsController extends AbstractController
      *
      * @return Response
      */
-    public function create(Request $request): Response
+    public function patientMetricCreate(Request $request): Response
     {
         // Perform update by id
         $patientsMetrics = DB::table('patients')
@@ -122,7 +122,7 @@ class PatientsMetricsController extends AbstractController
                   'patients.age' => '73',
                   'patients.location' => 'Newwark, NJ',
                   'patients.created_at' => \Carbon\Carbon::now(),
-                  'patients.updated_at' => \Carbon\Carbon::now()
+                  'patients.updated_at' => \Carbon\Carbon::now(),
                 ]
             );
 
@@ -143,7 +143,7 @@ class PatientsMetricsController extends AbstractController
      *
      * @return Response
      */
-    public function update(Request $request, array $args): Response
+    public function patientMetricUpdateById(Request $request, array $args): Response
     {
         // Perform update by id
         $patientsMetrics = DB::table('patients')
@@ -176,7 +176,7 @@ class PatientsMetricsController extends AbstractController
      *
      * @return TextResponse
      */
-    public function delete(Request $request, array $args): TextResponse
+    public function patientMetricDeleteById(Request $request, array $args): TextResponse
     {
         try {
             $patient = DB::table('patients')->where('patients.id', $args['id'])->first();
