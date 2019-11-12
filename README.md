@@ -13,7 +13,7 @@ $ composer install && composer start
 ```
 
 ## Testing
-Use Insomnia or Postman to test API.
+Use Insomnia or Postman to test API; phpunit testing/code quality integration (in progress)
 
 ``` bash
 $ phpunit
