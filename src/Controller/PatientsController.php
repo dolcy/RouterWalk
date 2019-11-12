@@ -28,7 +28,7 @@ class PatientsController extends AbstractController
                 'patients.name',
                 'patients.age',
                 'patients.location',
-            )
+                )
             ->get();
 
         $response = new Response();
@@ -91,7 +91,7 @@ class PatientsController extends AbstractController
                 [
                   'patients.name' => 'Jean Bain',
                   'patients.age' => '73',
-                  'patients.location' => 'Newwark, NJ',
+                  'patients.location' => 'Newark, NJ',
                   'patients.created_at' => \Carbon\Carbon::now(),
                   'patients.updated_at' => \Carbon\Carbon::now(),
                 ]

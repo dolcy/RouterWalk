@@ -12,7 +12,8 @@ Then finally...
 $ composer install && composer start
 ```
 
-Testing
+## Testing
+Use Insomnia or Postman to test API.
 
 ``` bash
 $ phpunit

@@ -14,7 +14,7 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Handler\FirePHPHandler;
 use RouterApp\Route\Route;
 
-// Load evironment variables
+// Load environment variables
 $dotenv = \Dotenv\Dotenv::create(__DIR__.'/../');
 $dotenv->load();
 
