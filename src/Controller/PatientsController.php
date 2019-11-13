@@ -28,7 +28,7 @@ class PatientsController extends AbstractController
                 'patients.name',
                 'patients.age',
                 'patients.location',
-                )
+            )
             ->get();
 
         $response = new Response();
