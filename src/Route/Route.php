@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace RouterApp\Route;
 
-use League\Container\Container;
 use League\Route\Router;
 use League\Route\RouteGroup;
-use League\Route\Strategy\ApplicationStrategy;
+use League\Route\Strategy\JsonStrategy;
+use Zend\Diactoros\ResponseFactory;
 
 final class Route
 {
     public static function resource()
     {
-        $container = new Container();
-        $strategy = (new ApplicationStrategy())->setContainer($container);
+        $responseFactory = new ResponseFactory;
+        $strategy = new JsonStrategy($responseFactory);
         // Instantiate router
         $router = (new Router())->setStrategy($strategy);
         // Route patients group
