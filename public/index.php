@@ -3,6 +3,6 @@
 declare(strict_types=1);
 
 /**
- * Start app via Bootstrap.php
+ * Require bootsrap
  */
 require __DIR__ . '/../bootstrap/bootstrap.php';

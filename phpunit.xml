@@ -14,7 +14,7 @@
          stopOnFailure="false"
          bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite name="RouterApp Test Suite">
+        <testsuite name="RouterWalk Test Suite">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
