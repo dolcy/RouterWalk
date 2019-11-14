@@ -1,7 +1,7 @@
-## Routerapp
+## RouterWalk
 RouterApp demo showcasing RESTful routing
 
-[![Build Status](https://travis-ci.org/adamculp/api-consumer.svg?branch=master)](https://travis-ci.org/dolcy/routerapp)
+[![Build Status](https://travis-ci.org/adamculp/api-consumer.svg?branch=master)](https://travis-ci.org/dolcy/RouterWalk)
 
 ## Install and Startup
 First, create .env with database credentials (i.e. .env.default)
